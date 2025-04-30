@@ -1,5 +1,5 @@
 from line import draw_line
-from config import cells,path,path_undo
+from config import cells, path, path_undo
 
 
 class Cell:
@@ -35,12 +35,14 @@ class Cell:
         if self.has_top_wall:
             draw_line(left_x, top_y, right_x, top_y, canvas, color)
 
-    def draw_move(self,to_cell,undo=False):
-        center_x=(self._x1+self._x2)/2
-        center_y=(self._y1+self._y2)/2
-        to_center_x=(to_cell._x1+to_cell._x2)/2
-        to_center_y=(to_cell._y1+to_cell._y2)/2
-        color=path
+    def draw_move(self, to_cell, undo=False):
+        
+        center_x = (self._x1 + self._x2) / 2
+        center_y = (self._y1 + self._y2) / 2
+
+        to_center_x = (to_cell._x1 + to_cell._x2) / 2
+        to_center_y = (to_cell._y1 + to_cell._y2) / 2
+        color = path
         if undo:
-            color=path_undo
-        draw_line(center_x,center_y,to_center_x,to_center_y,self._win.canvas,color)
+            color = path_undo
+        draw_line(center_x, center_y, to_center_x, to_center_y, self._win.canvas, color)
