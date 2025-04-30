@@ -15,7 +15,5 @@ class Line:
 
 
 def draw_line(x1, y1, x2, y2, canvas, color):
-    point1 = Point(x1, y1)
-    point2 = Point(x2, y2)
-    line = Line(point1, point2)
+    line = Line(Point(x1, y1), Point(x2, y2))
     line.draw(canvas, color)
