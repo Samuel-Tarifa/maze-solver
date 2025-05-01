@@ -3,7 +3,7 @@ from config import cells, path, path_undo
 
 
 class Cell:
-    def __init__(self, x1, y1, x2, y2, win):
+    def __init__(self, x1, y1, x2, y2, win=None):
         if x1 < 0 or x2 > win.width or y1 < 0 or y2 > win.height:
             raise Exception("Invalid coordinates: Out of bounds")
         if x1 > x2 or y1 > y2:
